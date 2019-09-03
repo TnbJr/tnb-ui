@@ -1,0 +1,133 @@
+/*********************************************************/
+/* Tooltip */
+
+$tooltip--content-background-color: $primary-color;
+$tooltip--content-background-color--error: $red;
+
+%tooltip--inline-trigger {
+  display: inline;
+  border-bottom: 1px dotted $gray;
+}
+
+.tooltip {
+  &:hover {
+    .tooltip--trigger {
+      color: $primary-color;
+    }
+  }
+
+  &.mod-plain {
+    .tooltip--trigger-text,
+    .tooltip--trigger-hybrid {
+      border-bottom: none;
+    }
+  }
+}
+
+.tooltip--trigger {
+  display: inline-block;
+  color: $default-text-color;
+}
+
+.tooltip--trigger-text {
+  @extend %tooltip--inline-trigger;
+}
+
+.tooltip--trigger-icon {
+  color: $gray-light;
+  font-size: $ms-1;
+}
+
+.tooltip--trigger-hybrid {
+  @extend %tooltip--inline-trigger;
+  
+  .icon {
+    position: relative;
+    top: 1px;
+  }
+}
+
+/* styles for tooltip content, using a readymade component */
+
+.__react_component_tooltip {
+  @extend %normal-text-style; // needed because sometimes the tooltip is inside a label
+  text-align: left;
+  background-color: $tooltip--content-background-color !important;
+  padding: .75rem 1rem !important;
+  max-width: 300px;
+  border-radius: 4px !important;
+
+  &.place-top,
+  &.place-bottom {
+    margin-left: -1px;
+  }
+
+  &.place-left,
+  &.place-right {
+    margin-top: -1px;
+  }
+
+  p {
+    color: $gray-light;
+    font-size: $ms-2;
+    font-weight: $font-weight-medium;
+    line-height: 1.3em;
+
+    &:not(:last-of-type) {
+      margin-bottom: .75rem;
+    }
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  // little arrow color
+
+  &.place-left:after {
+    border-left-color: $tooltip--content-background-color !important;
+  }
+
+  &.place-right:after {
+    border-right-color: $tooltip--content-background-color !important;
+  }
+
+  &.place-top:after {
+    border-top-color: $tooltip--content-background-color !important;
+  }
+
+  &.place-bottom:after {
+    border-bottom-color: $tooltip--content-background-color !important;
+  }
+}
+
+.tooltip {
+  &.mod-error {
+    .__react_component_tooltip {
+      background-color: $tooltip--content-background-color--error !important;
+
+      // little arrow color
+      &.place-left:after {
+        border-left-color: $tooltip--content-background-color--error !important;
+      }
+
+      &.place-right:after {
+        border-right-color: $tooltip--content-background-color--error !important;
+      }
+
+      &.place-top:after {
+        border-top-color: $tooltip--content-background-color--error !important;
+      }
+
+      &.place-bottom:after {
+        border-bottom-color: $tooltip--content-background-color--error !important;
+      }
+    }
+  }
+
+  &.mod-small {
+    .__react_component_tooltip {
+      padding: .25rem .5rem !important;
+    }
+  }
+}

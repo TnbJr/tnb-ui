@@ -1,0 +1,56 @@
+/*********************************************************/
+/*Tnb Brand Colors */
+
+/* Primary */
+$primary-color: #4E4E69 !default;
+$primary-color-dark: #323247 !default;
+$primary-color-extra-dark: #1A1A2D !default;
+
+/* Secondarys */
+$secondary-color: #5AB2E5 !default;
+$secondary-color-dark: #438FBA !default;
+$secondary-color-light: lighten($secondary-color, 35%) !default;
+
+/* Grays */
+$gray-extra-extra-extra-light: #F8F9F9 !default;
+$gray-extra-extra-light: #EEF2F5 !default;
+$gray-extra-light: #E3EBEF !default;
+$gray-light: #CCD6DE !default;
+$gray: #A8BBC7 !default;
+$gray-dark: #8297A4 !default;
+$gray-extra-dark: #161616 !default;
+
+// $gray-extra-extra-light: #EEF2F5;
+// $gray-extra-light: #f8f8f8;
+// $gray-light: #c7c7c7;
+// $gray: #b3b3b3;
+$gray-dark: #828282;
+// $gray-extra-dark: #161616;
+
+/* Greens */
+$green: #61CC7A !default;
+$green-dark: #43A867 !default;
+
+/* Yellows */
+$yellow-light: #FFFEF7 !default;
+$yellow: #FADC59 !default;
+$yellow-dark: #EDB126 !default;
+$yellow-extra-dark: #C98D00 !default;
+
+/* Reds */
+$red: #EF606E !default;
+$red-light: lighten($red, 32%) !default;
+$red-dark: #C74646 !default;
+
+/* White */
+$white: #fff !default;
+
+/*********************************************************/
+/* Convenience variables */
+
+$line-color: $gray-light !default;
+$shadow-color: $gray-extra-dark !default;
+$label-text-color: $gray-dark !default;
+$default-text-color: $gray-extra-dark  !default;
+$input-text-color: $default-text-color !default;
+$highlight-color: $green !default;

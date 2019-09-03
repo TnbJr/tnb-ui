@@ -1,0 +1,9 @@
+
+/*********************************************************/
+/* Page Banner */
+
+.page-banner {
+  @extend %banners-and-notifications;
+  text-align: center;
+  align-content: baseline;
+}

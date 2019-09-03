@@ -1,0 +1,63 @@
+/**************************************************/
+/* Content Headings */
+
+.content-heading {
+	color: inherit;
+	font-weight: $font-weight-medium;
+
+	&.mod-centered {
+		text-align: center;
+	}
+}
+
+h1.content-heading {
+	@include responsive-font-sizes(h1);
+	// margin-bottom: $spacing--large;
+}
+
+h2.content-heading {
+	@include responsive-font-sizes(h2);
+	// margin-bottom: $spacing--medium;
+}
+
+h3.content-heading {
+	@include responsive-font-sizes(h3);
+	// margin-bottom: $spacing--small;
+}
+
+h4.content-heading {
+	@include responsive-font-sizes(h4);
+	// margin-bottom: $spacing--tiny;
+}
+
+h5.content-heading {
+	@include responsive-font-sizes(h5);
+	// margin-bottom: 0;
+}
+
+h6.content-heading {
+	@extend %tiny-label-text-style;
+	margin-bottom: 0;
+}
+
+.fonts-not-loaded {
+	h1.content-heading {
+		@include responsive-font-sizes(h1, $fallback-font-size-multiplier);
+	}
+
+	h2.content-heading {
+		@include responsive-font-sizes(h2, $fallback-font-size-multiplier);
+	}
+
+	h3.content-heading {
+		@include responsive-font-sizes(h3, $fallback-font-size-multiplier);
+	}
+
+	h4.content-heading {
+		@include responsive-font-sizes(h4, $fallback-font-size-multiplier);
+	}
+
+	h5.content-heading {
+		@include responsive-font-sizes(h5, $fallback-font-size-multiplier);
+	}
+}

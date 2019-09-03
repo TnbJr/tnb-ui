@@ -1,0 +1,50 @@
+/*********************************************************/
+/* Notification */
+
+$notifications--bottom-offset: 20px;
+$notifications--right-offset: 100px;
+$notifications--width: 320px;
+
+// the animation properties should all be non-prefix up once we're using autoprefixer TODO: #58
+@-webkit-keyframes notifications--animate-reveal {
+  0% {
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  100% {
+    opacity: 1;
+    max-height: 100px;
+  }
+}
+
+.notifications {
+  position: fixed;
+  bottom: $notifications--bottom-offset;
+  right: $notifications--right-offset;
+  z-index: 3;
+}
+
+.notifications--item {
+  @extend %banners-and-notifications;
+  -webkit-animation: notifications--animate-reveal .23s ease-out;
+  overflow: hidden;
+  width: $notifications--width;
+  margin-top: $spacing--tiny;
+  padding: .75rem 1rem;
+  position: relative;
+  border-radius: 4px;
+  box-shadow: $shadow-standard;
+  align-items: center;
+
+  p {
+    flex: 1;
+    text-align: left;
+  }
+
+  .button {
+    margin-left: .75rem;
+  }
+}

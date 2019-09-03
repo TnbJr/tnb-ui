@@ -1,0 +1,39 @@
+/* CSS Reset */
+@import "reset.scss";
+
+/* Variables */ 
+@import "variables/breakpoints.scss";
+@import "variables/sizes-and-spacing.scss";
+@import "variables/_colors.scss";
+@import "variables/typographical.scss";
+@import "variables/visual-effects.scss";
+@import "variables/common-elements.scss";
+@import "variables/input-variables.scss";
+@import "variables/animations.scss";
+
+
+/* Global default styless */
+@import "global.scss";
+@import "styleguide.scss";
+
+@import "../components/Button/button.scss";
+@import "../components/CheckBox/checkbox.scss";
+@import "../components/ContentPage/content-page.scss";
+@import "../components/Grid/grid.scss";
+@import "../components/Headings/heading.scss";
+@import "../components/InputBlock/input-block.scss";
+@import "../components/MessagePage/message-page.scss";
+@import "../components/Select/select.scss";
+@import "../components/MultiSelect/multi-select.scss";
+@import "../components/Sidebar/sidebar.scss";
+@import "../components/TextArea/textarea.scss";
+@import "../components/TextBlock/text-block.scss";
+@import "../components/TextInput/text-input.scss";
+@import "../components/Switch/switch.scss";
+@import "../components/PageBanner/page-banner.scss";
+@import "../components/Notifications/notifications.scss";
+@import "../components/Modal/overlay-and-modals.scss";
+@import "../components/Tooltip/tooltip.scss";
+@import "../components/Navbar/navbar.scss";
+@import "../components/Hero/hero.scss";
+@import "../components/SideDrawer/sidedrawer.scss";

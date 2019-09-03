@@ -1,0 +1,21 @@
+/*********************************************************/
+/* Sizes */
+
+// used in buttons, inputs, etc. - where a uniform height is often desired because of their inline nature
+$element-height--standard: 38px;
+$element-height--big: 48px;
+
+/*********************************************************/
+/* Spacing */
+
+// used for putting space around or between items on a page
+$spacing--tiny: .5rem;
+$spacing--small: 1rem;
+$spacing--medium: 1.5rem;
+$spacing--large: 2rem;
+$spacing--xlarge: 3rem;
+
+/*********************************************************/
+/* Layout-related */
+
+$single-column-content--max-width: 600px; // arbitrary value based on common screen sizes

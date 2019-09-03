@@ -1,0 +1,262 @@
+/*********************************************************/
+/* Text Blocks and Content Headings */
+
+/* Explanation of why these components exist:
+
+In _defaults.scss, we normalized all the elements' typography to be basically the same, meaning <h1>s are the same size as <p>s, etc. This minimizes confusion over what styles are already applied when you're starting to style something.
+
+Of course, when you're reading a page of text, you want headings to be bigger, paragraphs to have a bigger line-height for readability reasons, etc.
+
+Rather than define these rules at the tag level (see philosophical note at end), we define them specifically within the context of a .text-block element.
+
+The .text-block should only wrap <p>s, lists, and other textual elements--not headings or other components (because those components likely themselves have <p>s or lists that need to be styled differently). By having headings outside, we can have the added flexibility of interspersing headings throughout the page, regardless of whether it's before text or other content types (slideshows, galleries, carousels, etc.).
+
+(Philosophical side-note: although we try to use tags as "semantically" as we can, the semantics around naked tags are fuzzy at best. A tag, depending on context, can have very different meanings. For example, using a <p> inside of an error dialog indicates that it wraps a bunch of text, but not that it's a 'paragraph' in the traditional sense of "a distinct section of a piece of writing, usually dealing with a single theme and indicated by a new line, indentation, or numbering". [Thanks Oxford English Dictionary!] A <p> inside a long-form article will have a different visual treatment from a <p> inside an error message. This is why in general, we should try to stay away from making style assumptions at the tag level.)
+ */
+
+/*********************************************************/
+// Some useful placeholders
+
+%text-block--element {
+	color: inherit;
+	font-weight: $font-weight-regular;
+}
+
+/*********************************************************/
+// Text Blocks & their contents
+
+.text-block {
+	// space out all direct descendents the same amount (besides Content Headings, which have their own spacing rules)
+	> *:not(.content-heading):not(:last-child) {
+		margin-bottom: $paragraph-spacing;
+	}
+	
+	// add margin after each Text Block, except for the last one
+	&:not(:last-child) {
+		margin-bottom: $spacing--large;
+	}
+
+	// Paragraphs
+	p {
+		@extend %text-block--element;
+		@include responsive-font-sizes(p);
+		line-height: $paragraph-line-height;
+
+		&.mod-small {
+			@include responsive-font-sizes(small);
+		}
+
+		&.mod-centered {
+			text-align: center;
+		}
+
+		&.mod-ellipsis {
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			width: 100%;
+			overflow: hidden;
+		}
+
+		&.mod-breakword {
+			word-wrap: break-word;
+		}
+	}
+
+	// Intro Paragraphs
+
+	p.intro {
+		@include responsive-font-sizes(intro);
+		line-height: $paragraph-intro-line-height;
+	}
+
+	// Lists
+	@extend %default-list-style;
+
+	ul,
+	ol {
+		margin-left: $default-list-indent;
+
+		&.mod-small li {
+			@include responsive-font-sizes(small);
+		}
+	}
+
+	li {
+		@extend %text-block--element;
+		@include responsive-font-sizes(list);
+		line-height: $paragraph-line-height;
+		margin: $default-list-spacing 0;
+	}
+
+	// Definition Lists
+
+	dl {
+		@extend %text-block--element;
+		@include responsive-font-sizes(p);
+		line-height: $paragraph-line-height;
+	}
+
+	dt {
+		@extend %text-block--element;
+		@include responsive-font-sizes(dt);
+		margin-bottom: $paragraph-spacing;
+	}
+
+	dd {
+		> :not(:last-child) {
+			margin-bottom: $paragraph-spacing;
+		}
+	}
+}
+
+.fonts-not-loaded {
+	.text-block {
+		p {
+			@include responsive-font-sizes(p, $fallback-font-size-multiplier);
+			line-height: $paragraph-line-height * $fallback-font-line-height-multiplier;
+		}
+
+		p.intro {
+			@include responsive-font-sizes(intro, $fallback-font-size-multiplier);
+			line-height: $paragraph-line-height * $fallback-font-line-height-multiplier;
+		}
+
+		li {
+			@include responsive-font-sizes(list, $fallback-font-size-multiplier);
+			line-height: $paragraph-line-height * $fallback-font-line-height-multiplier;
+		}
+
+		dt {
+			@include responsive-font-sizes(dt, $fallback-font-size-multiplier);
+			line-height: $paragraph-line-height * $fallback-font-line-height-multiplier;
+		}
+
+		dd {
+			@include responsive-font-sizes(p, $fallback-font-size-multiplier);
+			line-height: $paragraph-line-height * $fallback-font-line-height-multiplier;
+		}
+	}
+}
+
+@include screen-max-width($breakpoint-m) {
+	.text-block {
+		&:not(:last-child) {
+			margin-bottom: $spacing--medium;
+		}
+	}
+}
+
+@include screen-max-width($breakpoint-s) {
+	.text-block {
+		&:not(:last-child) {
+			margin-bottom: 1.25rem;
+		}
+	}
+}
+
+/**************************************************/
+/* Content Headings */
+
+.content-heading {
+	color: inherit;
+	font-weight: $font-weight-medium;
+
+	&.mod-centered {
+		text-align: center;
+	}
+}
+
+h1.content-heading {
+	@include responsive-font-sizes(h1);
+	// margin-bottom: $spacing--large;
+}
+
+h2.content-heading {
+	@include responsive-font-sizes(h2);
+	// margin-bottom: $spacing--medium;
+}
+
+h3.content-heading {
+	@include responsive-font-sizes(h3);
+	// margin-bottom: $spacing--small;
+}
+
+h4.content-heading {
+	@include responsive-font-sizes(h4);
+	// margin-bottom: $spacing--tiny;
+}
+
+h5.content-heading {
+	@include responsive-font-sizes(h5);
+	margin-bottom: 0;
+}
+
+h6.content-heading {
+	@extend %tiny-label-text-style;
+	margin-bottom: 0;
+}
+
+.fonts-not-loaded {
+	h1.content-heading {
+		@include responsive-font-sizes(h1, $fallback-font-size-multiplier);
+	}
+
+	h2.content-heading {
+		@include responsive-font-sizes(h2, $fallback-font-size-multiplier);
+	}
+
+	h3.content-heading {
+		@include responsive-font-sizes(h3, $fallback-font-size-multiplier);
+	}
+
+	h4.content-heading {
+		@include responsive-font-sizes(h4, $fallback-font-size-multiplier);
+	}
+
+	h5.content-heading {
+		@include responsive-font-sizes(h5, $fallback-font-size-multiplier);
+	}
+}
+
+/**************************************************/
+/* Quotes~! */
+
+.quote {
+	&.mod-centered {
+		text-align: center;
+	}
+}
+
+.quote--text {
+	font-size: $ms5;
+	font-style: italic;
+	margin-bottom: $spacing--medium;
+	line-height: $paragraph-line-height;
+}
+
+.quote--attribution {
+	font-size: $ms1;
+	&:before {
+		content: "- ";
+	}
+}
+
+@include screen-max-width($breakpoint-m) {
+  .quote--text {
+		font-size: $ms4;
+	}
+
+	.quote--attribution {
+		font-size: $ms0;
+	}
+}
+
+@include screen-max-width($breakpoint-s) {
+  .quote--text {
+		font-size: $ms3;
+	}
+
+	.quote--attribution {
+		font-size: $ms-1;
+	}
+}

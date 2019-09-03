@@ -1,0 +1,63 @@
+$width-sidenav: 180px;
+.styleguide{
+    display: grid;
+    position: relative;
+    grid-template-columns: $width-sidenav 1fr;
+    grid-template-areas: 
+        "sidebar main";
+    height: 100vh;
+    &--sidebar {
+        grid-area: sidebar;
+        background-color: $primary-color;
+        > ul > * {
+            border-top: 1px solid $primary-color;
+          }
+        
+          a {
+            font-size: $ms1;
+            color: #fff;
+            display: block;
+            padding: .65rem 1rem;
+            text-decoration: none;
+        
+            &:hover {
+              background: rgba($primary-color-extra-dark, .5);
+            }
+        
+            &:focus {
+              box-shadow: none;
+            }
+        
+            &.active {
+              background: $primary-color-extra-dark;
+              color: #fff;
+            }
+          }
+        
+          > ul > li {
+            font-size: $ms1;
+          }
+        
+          > ul > li > ul {
+            padding: 1rem;
+            padding-top: 0;
+          }
+        
+          > ul > li > ul > li {
+            font-size: $ms-1;
+            margin: $spacing--tiny 0;
+          }
+        
+          > ul > li > ul > li > ul {
+            margin: $spacing--tiny 0;
+        
+            > li {
+              font-size: $ms-2;
+              margin: .25rem 0;
+            }
+          }
+    }
+    &--content {
+        padding: 2rem;
+    }
+}
