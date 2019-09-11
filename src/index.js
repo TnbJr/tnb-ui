@@ -23,12 +23,13 @@ import Overlay from './components/Overlay';
 import SideDrawer from './components/SideDrawer';
 import DynamicForm from './components/Form';
 import TextBlock from './components/TextBlock';
+import SideBar from './components/SideBar';
 
 export {
     Button,
     ButtonContainer,
     TextInput,
-    CheckboxGroup,
+    // CheckboxGroup,
     Checkbox,
     RadioGroup,
     Radio,
@@ -56,5 +57,6 @@ export {
     InputMessage,
     DynamicForm,
     TextArea,
-    TextBlock
+    TextBlock,
+    SideBar
 }

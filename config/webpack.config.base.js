@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: paths.styleGuide,
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -56,7 +57,11 @@ module.exports = {
     //     }
     // },
     {
-        test: /\.(eot|ttf|otf|woff|woff2|json|xml|svg|ico)$/,
+      test: /\.svg$/,
+      loader: 'svg-inline-loader'
+    },
+    {
+        test: /\.(eot|ttf|otf|woff|woff2|json|xml|ico)$/,
         use: [
           {
             loader: 'file-loader',

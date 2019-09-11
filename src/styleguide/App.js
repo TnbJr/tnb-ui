@@ -1,7 +1,8 @@
 import React from 'react';
+import { Switch, Route, Link, NavLink, BrowserRouter } from 'react-router-dom';
 import { throttle } from 'lodash';
 import validation from '../util/validation';
-import { Overlay, NavBar, SideDrawer, DynamicForm, Hero, Icon} from '../index'
+import { Overlay, NavBar, SideDrawer, DynamicForm, Hero, Icon, SideBar} from '../index'
 import {ICONS} from '../constants';
 
 class App extends React.Component {
@@ -95,6 +96,7 @@ class App extends React.Component {
             },
           ];
         return(
+
             <div style={{height: '100%'}}>
                 <NavBar 
                     drawerClickHandler={this.drawerToggleClcickHandler}
@@ -109,7 +111,34 @@ class App extends React.Component {
                     closeBtnClickHandler={this.backdropClickHandler}
                 />
                 <main style={{ margin: '1rem' }}>
-                    <DynamicForm 
+                    <BrowserRouter>
+                    <SideBar className="slime-bar">
+                        <SideBar.NavGroup title="Test">
+                            <SideBar.NavLink link="/">
+                                Link 1
+                            </SideBar.NavLink>
+                            <SideBar.NavLink link="/home">
+                                Link 2
+                            </SideBar.NavLink>
+                            <SideBar.NavLink link="/han">
+                                 Link 3
+                            </SideBar.NavLink>
+                        </SideBar.NavGroup>
+                        <SideBar.NavGroup title="Yurr">
+                            <SideBar.NavLink link="/uhu">
+                                Link 1
+                            </SideBar.NavLink>
+                            <SideBar.NavLink link="/home">
+                                Link 2
+                            </SideBar.NavLink>
+                            <SideBar.NavLink link="/han">
+                                 Link 3
+                            </SideBar.NavLink>
+                        </SideBar.NavGroup>
+                    </SideBar>
+                    </BrowserRouter>
+
+                    {/* <DynamicForm 
                         fields={fields}
                         validation={validation}
                         // classNames="dtnamic-class"
@@ -119,8 +148,9 @@ class App extends React.Component {
                     <Icon icon={ICONS.TRASH}/>
                     <Icon icon={ICONS.BELL}/>
                     <Icon icon={ICONS.USER}/>
-                    <Icon icon={ICONS.CROSS}/>
-                    <Hero header="yo"/>
+                    <Icon icon={ICONS.ARROW}/> */}
+                   
+                    {/* <Hero header="yo"/>  */}
                 </main>
             </div>
         )

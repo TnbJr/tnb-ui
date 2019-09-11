@@ -1,31 +1,46 @@
 /*********************************************************/
 /*Tnb Brand Colors */
 
+
+// $primary-color-light: #186
+// $primary-color: #0F609B !default;
+// $primary-color-dark: #0A558C !default;
+// $primary-color-extra-dark: #003E6B !default;
+
+
 /* Primary */
-$primary-color: #4E4E69 !default;
-$primary-color-dark: #323247 !default;
-$primary-color-extra-dark: #1A1A2D !default;
+$primary-color-extra-extra-extra-light: #E6F6FF !default;
+$primary-color-extra-extra-light: #7CC4FA !default;
+$primary-color-extra-light: #47A4F3 !default;
+$primary-color-light: #2186EB !default;
+$primary-color: #0967d2 !default;
+$primary-color-dark: #0552B5 !default;
+$primary-color-extra-dark: #03449E !default;
+$primary-color-extra-extra-dark: #01337D !default;
+$primary-color-extra-extra-extra-extra-dark: #002159 !default;
+
 
 /* Secondarys */
-$secondary-color: #5AB2E5 !default;
-$secondary-color-dark: #438FBA !default;
-$secondary-color-light: lighten($secondary-color, 35%) !default;
+$secondary-color-extra-extra-extra-light: #fff !default;
+$secondary-color-extra-extra-light: #fff !default;
+$secondary-color-extra-light: #fff !default;
+$secondary-color-light: #fff !default;
+$secondary-color: #2680C2 !default;
+$secondary-color-dark: #fff !default;
+$secondary-color-extra-dark: #fff !default;
+$secondary-color-extra-extra-dark: #fff !default;
+$secondary-color-extra-extra-extra-extra-dark: #fff !default;
 
 /* Grays */
 $gray-extra-extra-extra-light: #F8F9F9 !default;
 $gray-extra-extra-light: #EEF2F5 !default;
 $gray-extra-light: #E3EBEF !default;
 $gray-light: #CCD6DE !default;
-$gray: #A8BBC7 !default;
-$gray-dark: #8297A4 !default;
-$gray-extra-dark: #161616 !default;
-
-// $gray-extra-extra-light: #EEF2F5;
-// $gray-extra-light: #f8f8f8;
-// $gray-light: #c7c7c7;
-// $gray: #b3b3b3;
-$gray-dark: #828282;
-// $gray-extra-dark: #161616;
+$gray: #7E7E7E !default;
+$gray-dark: #626262 !default;
+$gray-extra-dark: #515151 !default;
+$gray-extra-extra-dark: #3B3B3B !default;
+$gray-extra-extra-extra-dark: #222222 !default;
 
 /* Greens */
 $green: #61CC7A !default;
