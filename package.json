@@ -10,7 +10,8 @@
   "scripts": {
     "start": "webpack-dev-server --open --config ./config/webpack.config.dev.js --mode development --progress --colors",
     "build:clean": "rimraf dist",
-    "build": "npm run build:clean && webpack --config ./config/webpack.config.prod.js --mode production --watch",
+    "build": "npm run build:clean && webpack --config ./config/webpack.config.prod.js --mode production",
+    "build:watch": "npm run build:clean && webpack --config ./config/webpack.config.prod.js --mode production --watch",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "jest",
     "test:watch": "jest --watchAll",
