@@ -14,10 +14,22 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "test:coverage": "jest --collect-coverage"
+    "test:coverage": "jest --collect-coverage",
+    "prepare": "npm run build"
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "ag-grid-community": "^21.1.1",
+    "ag-grid-react": "^21.1.0",
+    "formik": "^1.5.8",
+    "lodash": "^4.17.11",
+    "react-recaptcha": "^2.3.10",
+    "react-router": "^5.0.1",
+    "react-select": "^1.3.0",
+    "react-tooltip": "^3.10.0",
+    "yup": "^0.27.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
@@ -67,16 +79,5 @@
     "moduleNameMapper": {
       "\\.(css|scss)$": "<rootDir>/config/CSSStub.js"
     }
-  },
-  "dependencies": {
-    "ag-grid-community": "^21.1.1",
-    "ag-grid-react": "^21.1.0",
-    "formik": "^1.5.8",
-    "lodash": "^4.17.11",
-    "react-recaptcha": "^2.3.10",
-    "react-router": "^5.0.1",
-    "react-select": "^1.3.0",
-    "react-tooltip": "^3.10.0",
-    "yup": "^0.27.0"
   }
 }
