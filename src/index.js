@@ -1,4 +1,4 @@
-import "./stylesheets/_styles.scss";
+import "./stylesheets/styles.scss";
 import Button, { ButtonContainer } from './components/Button';
 import TextInput from './components/TextInput';
 import { RadioGroup, Radio } from './components/Radio';

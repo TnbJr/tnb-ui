@@ -45,3 +45,5 @@ Also the you will need to import 'tnb-ui/src/stylesheets/_styles.scss'; into you
 * Add stories for all components
 * Create Unit test for all components
 * Fix having to fix dev server when there is a issue with sass
+* Remove storybook and use styleguidist
+
