@@ -4,8 +4,8 @@
 /*********************************************************/
 /* Focus Style (for form elements) */
 
-$focus-box-shadow: 0px 0px 3px 2px $secondary-color;
-$focus-transition: box-shadow .25s;
+$focus-box-shadow: 0px 0px 3px 2px $secondary-color !default;
+$focus-transition: box-shadow .25s !default;
 
 %focus-style {
   transition: $focus-transition;
@@ -21,7 +21,7 @@ $focus-transition: box-shadow .25s;
 /*********************************************************/
 /* Max-Width Content Wrapper */
 
-$wrapper--horizontal-padding: $spacing--medium;
+$wrapper--horizontal-padding: $spacing--medium !default;
 
 @mixin wrapper($width: $max-width) {
   max-width: $width;
@@ -50,9 +50,9 @@ $wrapper--horizontal-padding: $spacing--medium;
 /*********************************************************/
 /* White Box */
 
-$white-box--padding: $spacing--medium;
-$white-box--box-shadow: 0px 1px 3px rgba($shadow-color, .2);
-$white-box--active-box-shadow: 0px 0px 5px 1px rgba($shadow-color, .7);
+$white-box--padding: $spacing--medium !default;
+$white-box--box-shadow: 0px 1px 3px rgba($shadow-color, .2) !default;
+$white-box--active-box-shadow: 0px 0px 5px 1px rgba($shadow-color, .7) !default;
 
 %white-box {
   box-shadow: $white-box--box-shadow;
@@ -139,11 +139,11 @@ $white-box--active-box-shadow: 0px 0px 5px 1px rgba($shadow-color, .7);
 /*********************************************************/
 /* Message Box Styles */
 
-$message-box--border-style: 2px solid;
-$message-box--title-color: $primary-color;
-$message-box--red--title-color: $red;
-$message-box--yellow--title-color: $yellow-dark;
-$message-box--secondary--title-color: $secondary-color;
+$message-box--border-style: 2px solid !default;
+$message-box--title-color: $primary-color !default;
+$message-box--red--title-color: $red !default;
+$message-box--yellow--title-color: $yellow-dark !default;
+$message-box--secondary--title-color: $secondary-color !default;
 
 %message-box {
   background-color: $gray-extra-extra-light;

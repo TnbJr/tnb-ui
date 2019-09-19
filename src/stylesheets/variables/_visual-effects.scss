@@ -25,12 +25,12 @@
 /*********************************************************/
 /* Shadows */
 
-$shadow-standard: 0px 1px 2px rgba($shadow-color, .3);
+$shadow-standard: 0px 1px 2px rgba($shadow-color, .3) !default;
 
 /*********************************************************/
 /* Borders */
 
-$border-standard: 1px solid $line-color;
+$border-standard: 1px solid $line-color !default;
 
 /*********************************************************/
 /* Edge Shadows */
@@ -39,8 +39,8 @@ $border-standard: 1px solid $line-color;
 unlike the standard box-shadow which goes all the way around an element.
 We fake this with an :after pseudo-element and linear-gradient! */
 
-$edge-shadow--size: 4px;
-$edge-shadow--color: $shadow-color;
+$edge-shadow--size: 4px !default;
+$edge-shadow--color: $shadow-color !default;
 
 @mixin edge-shadow-pseudo-element($side, $position) {
   display: block;

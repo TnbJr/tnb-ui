@@ -3,12 +3,12 @@
 
 // Note: not all media queries will rely on these. Some breakpoints need to be customized down to the pixel for specific scenarios. These are just here for convenience as an approximation for various device types.
 
-$breakpoint-l: 900px;
-$breakpoint-m: 720px;
-$breakpoint-s: 540px;
-$breakpoint-xs: 420px;
+$breakpoint-l: 900px !default;
+$breakpoint-m: 720px !default;
+$breakpoint-s: 540px !default;
+$breakpoint-xs: 420px !default;
 
-$max-width: 1000px;
+$max-width: 1000px !default;
 
 /* Convenience mixin (using fancy @contents SASS directive!) to avoid typing all that @media max-width stuff */
 

@@ -1,10 +1,10 @@
-$inputs--disabled-label-text-color: darken($gray-dark, 5%);
+$inputs--disabled-label-text-color: darken($gray-dark, 5%) !default;
 
-$inputs--padding: 8px 8px 7px 8px;
-$inputs--standard-height: $element-height--standard;
+$inputs--padding: 8px 8px 7px 8px !default;
+$inputs--standard-height: $element-height--standard !default;
 
-$inputs--big--padding: 8px 12px 7px 12px;
-$inputs--big--standard-height: $element-height--big;
+$inputs--big--padding: 8px 12px 7px 12px !default;
+$inputs--big--standard-height: $element-height--big !default;
 
 %input-style {
   // box-shadow: 0px 0px 0px 1px $line-color,
@@ -46,9 +46,9 @@ $inputs--big--standard-height: $element-height--big;
 /*********************************************************/
 /* Radio Buttons & Checkboxes */
 
-$radio-checkbox--input-size: 24px;
-$radio-button--size: 22px;
-$checkbox--size: 20px;
+$radio-checkbox--input-size: 24px !default;
+$radio-button--size: 22px !default;
+$checkbox--size: 20px !default;
 
 
 %radio-checkbox-container {
