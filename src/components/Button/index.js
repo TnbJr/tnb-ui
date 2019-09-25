@@ -45,13 +45,14 @@ const Button = ({
 
 
 Button.propTypes = {
+   /** Description of prop "foo". */
 	huge: PropTypes.bool,
 	big: PropTypes.bool,
   small: PropTypes.bool,
+  stretch: PropTypes.bool,
   outline: PropTypes.bool,
   darkoutline: PropTypes.bool,
   transparent: PropTypes.bool,
-  stretch: PropTypes.bool,
   warning: PropTypes.bool,
   success: PropTypes.bool,
   highlight: PropTypes.bool,

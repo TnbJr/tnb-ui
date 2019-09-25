@@ -17,7 +17,8 @@
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --collect-coverage",
     "prepare": "npm run build && npm run build:scss",
-    "build:scss": "gulp"
+    "build:scss": "gulp",
+    "styleguidist": "styleguidist server"
   },
   "author": "",
   "license": "ISC",
@@ -40,6 +41,7 @@
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-info": "^5.1.9",
     "@storybook/react": "^5.1.9",
+    "acorn": "^6.3.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "classnames": "^2.2.6",
@@ -61,6 +63,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",
+    "react-styleguidist": "^9.1.16",
     "resolve-url-loader": "^3.1.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",

@@ -1,5 +1,5 @@
-$button--color: $secondary-color !default;
-$button--hover-color: $secondary-color-dark !default;
+$button--color: $primary-color !default;
+$button--hover-color: $primary-color-dark !default;
 $button--text-color: #fff !default;
 
 $button--mod-transparent--text-color: $gray-dark !default;
@@ -117,7 +117,7 @@ $button--small-height: 20px !default;
   }
 
   &:hover {
-    background: $button--hover-color;
+    // background: $button--hover-color;
     color: $button--text-color;
     text-decoration: none !important;
   }
