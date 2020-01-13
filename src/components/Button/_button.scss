@@ -71,7 +71,7 @@ $button--small-height: 20px !default;
   }
 
   &:focus {
-    color: $primary-color;
+    // color: $primary-color;
     box-shadow: 0 0 0 2px $primary-color inset, $focus-box-shadow;
   }
 }
@@ -98,6 +98,20 @@ $button--small-height: 20px !default;
   text-align: center;
 }
 
+@mixin btn-theme($btn-color, $hover-color) {
+    background-color: $btn-color;
+    &:hover {
+    background: $hover-color;
+    color: $button--text-color;
+    text-decoration: none !important;
+    
+  }
+
+    &:focus {
+      color: $button--text-color;
+    }
+}
+
 .button {
   @extend %label-text;
   @extend %focus-style;
@@ -117,7 +131,7 @@ $button--small-height: 20px !default;
   }
 
   &:hover {
-    // background: $button--hover-color;
+    background: $button--hover-color;
     color: $button--text-color;
     text-decoration: none !important;
   }
@@ -131,7 +145,9 @@ $button--small-height: 20px !default;
     box-shadow: none;
     pointer-events: none;
   }
-
+  &.mod-secondary{
+    @include btn-theme($secondary-color, $secondary-color-dark);
+  }
   &.mod-big {
     @extend %button--mod-big;
   }
@@ -169,14 +185,6 @@ $button--small-height: 20px !default;
   }
 
   &.mod-success {
-    background: $secondary-color;
-    
-    &:hover {
-      background: $secondary-color-dark;
-    }
-  }
-
-  &.mod-highlight {
     background: $green;
     
     &:hover {

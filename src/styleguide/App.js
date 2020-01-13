@@ -2,8 +2,54 @@ import React from 'react';
 import { Switch, Route, Link, NavLink, BrowserRouter } from 'react-router-dom';
 import { throttle } from 'lodash';
 import validation from '../util/validation';
-import { Overlay, NavBar, SideDrawer, DynamicForm, Hero, Icon, SideBar} from '../index'
+import { Overlay, NavBar, SideDrawer, DynamicForm, Hero, Icon, SideBar, DataTable, Chart} from '../index'
 import {ICONS} from '../constants';
+import { chartData } from '../components/Charts';
+const chartConfig = [
+    {
+        key: 'uv',
+        color: '#40ee86'
+    },
+    {
+        key: 'pv',
+        color: "#67d6c0", 
+    },
+    {
+        key: 'amt',
+        color: '#127197',
+    },
+    {
+        key: 'pizza',
+        color: "#e96d8d"
+    }
+    
+]
+
+const data = [
+    {
+      name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
+    },
+    {
+      name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
+    },
+    {
+      name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
+    },
+    {
+      name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
+    },
+    {
+      name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
+    },
+    {
+      name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
+    },
+    {
+      name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
+    },
+  ];
+
+
 
 class App extends React.Component {
     state = {
@@ -110,9 +156,9 @@ class App extends React.Component {
                     // show={true}
                     closeBtnClickHandler={this.backdropClickHandler}
                 />
-                <main style={{ margin: '1rem' }}>
+                <main style={{ margin: '1rem' }} className="styleguide">
                     <BrowserRouter>
-                    <SideBar className="slime-bar">
+                    <SideBar className="styleguide--sidebar slime-bar">
                         <SideBar.NavGroup title="Test">
                             <SideBar.NavLink link="/">
                                 Link 1
@@ -126,7 +172,7 @@ class App extends React.Component {
                         </SideBar.NavGroup>
                         <SideBar.NavGroup title="Yurr">
                             <SideBar.NavLink link="/uhu">
-                                Link 1
+                                 Link 1
                             </SideBar.NavLink>
                             <SideBar.NavLink link="/home">
                                 Link 2
@@ -137,24 +183,20 @@ class App extends React.Component {
                         </SideBar.NavGroup>
                     </SideBar>
                     </BrowserRouter>
-
-                    {/* <DynamicForm 
-                        fields={fields}
-                        validation={validation}
-                        // classNames="dtnamic-class"
-                    />
-                    <Icon icon={ICONS.FACEBOOK}/>
-                    <Icon icon={ICONS.ALERT}/>
-                    <Icon icon={ICONS.TRASH}/>
-                    <Icon icon={ICONS.BELL}/>
-                    <Icon icon={ICONS.USER}/>
-                    <Icon icon={ICONS.ARROW}/> */}
-                   
-                    {/* <Hero header="yo"/>  */}
+                    <div className="styleguide--content">
+                        <DataTable/>
+                        <Chart
+                            chartData={data}
+                            chartConfig={chartConfig}
+                        />
+                    </div>
+                    
                 </main>
             </div>
         )
     }
 }
+
+
 
 export default App;

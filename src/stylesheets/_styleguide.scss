@@ -1,11 +1,13 @@
+
 $width-sidenav: 180px;
 .styleguide{
     display: grid;
     position: relative;
-    grid-template-columns: $width-sidenav 1fr;
+    // grid-template-columns: $width-sidenav 1fr;
     grid-template-areas: 
         "sidebar main";
-    height: 100vh;
+    // height: 100vh;
+    margin: 0 !important;  //fixed this
     &--sidebar {
         grid-area: sidebar;
         background-color: $primary-color;
@@ -58,6 +60,7 @@ $width-sidenav: 180px;
           }
     }
     &--content {
+      grid-area: main;
         padding: 2rem;
     }
 }

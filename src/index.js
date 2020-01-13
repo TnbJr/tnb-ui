@@ -2,7 +2,7 @@ import "./stylesheets/styles.scss";
 import Button, { ButtonContainer } from './components/Button';
 import TextInput from './components/TextInput';
 import { RadioGroup, Radio } from './components/Radio';
-import { Checkbox } from './components/CheckBox';
+import { Checkbox } from './components/Checkbox';
 import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from './components/Headings';
 import { InputMessage } from './components/Messages';
 import Select from './components/Select';
@@ -24,6 +24,8 @@ import SideDrawer from './components/SideDrawer';
 import DynamicForm from './components/Form';
 import TextBlock from './components/TextBlock';
 import SideBar from './components/SideBar';
+import DataTable from './components/DataTable';
+import Chart from './components/Charts';
 
 export {
     Button,
@@ -58,5 +60,7 @@ export {
     DynamicForm,
     TextArea,
     TextBlock,
-    SideBar
+    SideBar,
+    DataTable,
+    Chart
 }

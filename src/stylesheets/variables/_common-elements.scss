@@ -4,7 +4,7 @@
 /*********************************************************/
 /* Focus Style (for form elements) */
 
-$focus-box-shadow: 0px 0px 3px 2px $secondary-color !default;
+$focus-box-shadow: 0px 0px 3px 2px $primary-color-light !default;
 $focus-transition: box-shadow .25s !default;
 
 %focus-style {

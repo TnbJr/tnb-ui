@@ -2,70 +2,6 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { noop } from 'lodash';
-import { optionObjects } from '../../util';
-// export const CheckboxGroup = ({
-// 	options,
-// 	value: values,
-// 	disabled,
-// 	onChange,
-// 	...flags
-// }) => {
-// 	// const classes = ['checkbox-group', ...getMods([], flags, 'stacked')]
-// 	const classes = cx('checkbox-group')
-// 	const optionsObjects = optionObjects(options)
-
-// 	return (
-// 		<div className={classes}>
-// 			{optionsObjects.map(({label, value: optValue}) => (
-// 				<Checkbox
-// 					key={optValue}
-// 					value={values.indexOf(optValue) >= 0}
-// 					label={label}
-// 					onChange={handleToggle(optValue)}
-// 					disabled={disabled}
-// 				/>
-// 			))}
-// 		</div>
-// 	)
-
-// 	function handleToggle(optValue) {
-// 		return !onChange
-// 			? () => {}
-// 			: function(isSet, evt) {
-// 					const newValues = isSet
-// 						? // this weirdness ensures the order of values matches the options
-// 							optionsObjects
-// 								.map(({value}) => value)
-// 								.filter(
-// 									value => value === optValue || values.indexOf(value) >= 0
-// 								)
-// 						: remove(values, optValue)
-// 					onChange(newValues)
-// 				}
-// 	}
-
-// 	function remove(arr, item) {
-// 		const index = arr.indexOf(item)
-// 		if (index < 0) {
-// 			return arr
-// 		}
-// 		return [...arr.slice(0, index), ...arr.slice(index + 1)]
-// 	}
-// }
-
-// CheckboxGroup.displayName = 'CheckboxGroup'
-
-// CheckboxGroup.propTypes = {
-// 	stacked: PropTypes.bool,
-// 	// options: optionPropType.isRequired,
-// 	value: PropTypes.arrayOf(PropTypes.string),
-// 	disabled: PropTypes.bool,
-// 	onChange: PropTypes.func,
-// }
-
-// CheckboxGroup.defaultProps = {
-// 	value: [],
-// }
 
 export const Checkbox = ({name, label, disabled, value, onChange, onBlur}) => {
 	const classNames = cx('checkbox');
@@ -108,3 +44,5 @@ Checkbox.defaultProps = {
 	onChange: noop,
 	onBlur: noop,
 }
+
+export default Checkbox;
